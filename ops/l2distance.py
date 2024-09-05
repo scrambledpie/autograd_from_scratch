@@ -1,4 +1,4 @@
-from .ops import OpBase, verify_shape
+from .opbase import OpBase, verify_shape
 
 class L2Distance(OpBase):
     """ element-wise squared differences, can be used for squared loss """

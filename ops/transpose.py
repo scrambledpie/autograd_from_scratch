@@ -1,4 +1,4 @@
-from .ops import OpBase
+from .opbase import OpBase
 
 
 class Transpose(OpBase):

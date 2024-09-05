@@ -1,6 +1,6 @@
 import numpy as np
 
-from .ops import OpBase
+from .opbase import OpBase
 
 class Clip(OpBase):
     """ Clip tensor values to min/max range (e.g. like RELU activation function) """

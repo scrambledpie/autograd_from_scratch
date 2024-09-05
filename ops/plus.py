@@ -1,4 +1,4 @@
-from .ops import OpBase, verify_shape
+from .opbase import OpBase, verify_shape
 
 class Plus(OpBase):
     """ Add two tensors together, must have same shape, broadcasting is not supported """

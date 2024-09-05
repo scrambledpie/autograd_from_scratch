@@ -1,6 +1,6 @@
 import numpy as np
 
-from .ops import OpBase, verify_shape
+from .opbase import OpBase, verify_shape
 
 
 class Const(OpBase):

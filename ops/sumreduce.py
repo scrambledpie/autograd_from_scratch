@@ -1,6 +1,6 @@
 import numpy as np
 
-from .ops import OpBase
+from .opbase import OpBase
 
 class SumReduce(OpBase):
     """ Sum all the elements in a tensor and output a scalar """

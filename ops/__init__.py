@@ -5,7 +5,7 @@ from .loss import Loss
 from .l2distance import L2Distance
 from .matmul import Matmul
 from .maxreduce import MaxReduce
-from .ops import OpBase
+from .opbase import OpBase
 from .plus import Plus
 from .reshape import Reshape
 from .scalarmultiply import ScalarMultiply
