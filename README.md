@@ -2,12 +2,22 @@
 
 One weekend, I wandered if I could write an autograd package using numpy and use it to train an MLP on mnist, this was the result. It is a casual, purely for fun implementation of autograd in numpy for learning/teaching purposes.
 
+## Usage
 Tensorflow is used to download the mnist dataset which is then pickled as numpy arrays.
+```
+python -m pip install numpy tensorflow pytest
+python -m pip install -e .
+pytest
+python train_mnist_mlp.py
+```
 
-A handful of operations are implemented
+## Details
+
+A handful of operations are implemented, enough for a basic Multi Layer Perceptron
 - Const (define data and parameters into the compuational graph)
 - Plus
 - MatMul
+- Reshape
 - Transpose
 - Clip (Relu activation function)
 - Cross-entropy Loss
