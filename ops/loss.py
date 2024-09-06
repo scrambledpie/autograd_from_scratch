@@ -5,7 +5,8 @@ from .opbase import OpBase
 
 class Loss(OpBase):
     """
-    Final op to initiate the backward pass, start with a tensor of a single scalar 1.
+    Final op to initiate the backward pass, start with a tensor of a single
+    scalar 1.
     """
     def __init__(self, x:OpBase):
         assert x.shape[0] == 1, f"incorrect final shape {x.shape} != (1,1)"

@@ -102,7 +102,7 @@ class OpBase(ABC):
 
     def dloss_dinput(self, input_op) -> np.ndarray:
         """
-        Compute dLoss/dinput_op where input_op is a single input tensor. 
+        Compute dLoss/dinput_op where input_op is a single input tensor.
 
         Note:the gradient returned is only how the input affects loss through
         this op. The same input tensor may be used in other ops and affect the
@@ -112,7 +112,7 @@ class OpBase(ABC):
         the full gradient w.r.t. x is given by
                 dLoss/dx = dLoss/df * df/dx + dLoss/dg * dg/dx
 
-        However, this op represents f() and the returns dLoss/df * df/dh.
+        However, this op only returns dLoss/df * df/dx.
         """
         try:
             input_name = self._input_op_name_from_id[id(input_op)]
@@ -121,12 +121,13 @@ class OpBase(ABC):
 
         if input_name not in self._backward_cached:
             self._backward_cached[input_name] = self._backward(input_op)
+            verify_shape(
+                self._backward_cached[input_name],
+                input_op,
+                f"{self}: grad shape"
+            )
 
-        grad = self._backward_cached[input_name]
-
-        verify_shape(grad, input_op, f"{self}: grad shape")
-
-        return grad
+        return self._backward_cached[input_name]
 
     @abstractmethod
     def __repr__(self) -> str:

@@ -5,14 +5,16 @@ from .opbase import OpBase, verify_shape
 
 class Const(OpBase):
     """
-    Constant: always return a predefined array (whose value can be changed externally).
-    Serves as source nodes/variables in the tensor computational graph e.g. dataset,
-    parameter matrices.
+    Constant: always return a predefined array (whose value can be manually
+    changed at runtime). Serves as source nodes/variables in the tensor
+    computational graph e.g. dataset, parameter matrices.
     """
     def __init__(self, val:np.ndarray):
         super().__init__()
         val = np.asarray(val)
-        assert isinstance(val, np.ndarray), f"Const requires np.ndarray: {type(val)}"
+        assert isinstance(val, np.ndarray), (
+            f"Const requires np.ndarray: {type(val)}"
+        )
         self.val = val
 
     def set_val(self, val: np.ndarray):

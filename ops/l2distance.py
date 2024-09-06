@@ -11,7 +11,10 @@ class L2Distance(OpBase):
         return self.input_ops["x1"].shape
 
     def _forward(self):
-        self.diff = self.input_ops["x1"].forward() - self.input_ops["x2"].forward()
+        self.diff = (
+            self.input_ops["x1"].forward() -
+            self.input_ops["x2"].forward()
+        )
         return 0.5 * (self.diff)**2
 
     def _backward(self, input_op: OpBase):

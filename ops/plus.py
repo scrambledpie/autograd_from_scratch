@@ -1,7 +1,9 @@
 from .opbase import OpBase, verify_shape
 
 class Plus(OpBase):
-    """ Add two tensors together, must have same shape, broadcasting is not supported """
+    """
+    Add two tensors, they must have same shape, broadcasting is not supported
+    """
     def __init__(self, x1:OpBase, x2:OpBase):
         super().__init__(x1=x1, x2=x2)
         verify_shape(x1, x2, self.__repr__())

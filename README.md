@@ -14,7 +14,7 @@ python train_mnist_mlp.py
 ## Details
 
 A handful of operations are implemented, enough for a basic Multi Layer Perceptron
-- Const (define data and parameters into the compuational graph)
+- Const (compuational graph source nodes e.g. data, parameters)
 - Plus
 - MatMul
 - Reshape

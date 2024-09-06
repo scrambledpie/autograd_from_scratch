@@ -3,7 +3,9 @@ import numpy as np
 from .opbase import OpBase
 
 class Clip(OpBase):
-    """ Clip tensor values to min/max range (e.g. like RELU activation function) """
+    """
+    Clip tensor values to min/max range (e.g. like RELU activation function)
+    """
     def __init__(self, x: OpBase, min:float=0, max:float=1e9):
         super().__init__(x=x)
         self.min = min
@@ -22,5 +24,7 @@ class Clip(OpBase):
         return f"Clip {self.shape} {self.min}, {self.max}"
 
     def _backward(self, input_op: OpBase):
-        """ jacobian = Identity matrix with 0s on the diagonal for clipped values """
+        """
+        jacobian = Identity matrix with 0s on the diagonal for clipped values
+        """
         return self.mask * self.dloss_doutput()
