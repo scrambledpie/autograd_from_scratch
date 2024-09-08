@@ -9,6 +9,7 @@ from ops import (
     Const,
     Cos,
     Exp,
+    HProd,
     Loss,
     L2Distance,
     Matmul,
@@ -164,7 +165,8 @@ class TestOps(unittest.TestCase):
     def test_CEloss(self):
         self.verify_2d_op(CELoss, x_shape=(15, 4), y_shape=(15, 4))
 
-
+    def test_hprod(self):
+        self.verify_2d_op(HProd, x_shape=(15, 4), y_shape=(15, 4))
 
 
 if __name__=="__main__":

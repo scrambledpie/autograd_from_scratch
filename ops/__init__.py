@@ -3,6 +3,7 @@ from .clip import Clip
 from .const import Const
 from .cos import Cos
 from .exp import Exp
+from .hprod import HProd
 from .loss import Loss
 from .l2distance import L2Distance
 from .matmul import Matmul
@@ -22,6 +23,7 @@ __all__ = [
     "Const",
     "Cos",
     "Exp",
+    "HProd",
     "Loss",
     "L2Distance",
     "Matmul",
