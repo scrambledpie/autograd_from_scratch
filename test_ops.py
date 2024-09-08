@@ -7,6 +7,7 @@ from ops import (
     CELoss,
     Clip,
     Const,
+    Cos,
     Exp,
     Loss,
     L2Distance,
@@ -16,6 +17,7 @@ from ops import (
     Plus,
     Reshape,
     ScalarMultiply,
+    Sin,
     SumReduce,
     Transpose,
 )
@@ -140,6 +142,12 @@ class TestOps(unittest.TestCase):
 
     def test_exp(self):
         self.verify_1d_op(Exp)
+
+    def test_sin(self):
+        self.verify_1d_op(Sin)
+
+    def test_cos(self):
+        self.verify_1d_op(Cos)
 
     def test_Reshape(self):
         self.verify_1d_op(Reshape, x_shape=(15, 4), shape=(5, 12))

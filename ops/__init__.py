@@ -1,6 +1,7 @@
 from .crossentropyloss import CELoss
 from .clip import Clip
 from .const import Const
+from .cos import Cos
 from .exp import Exp
 from .loss import Loss
 from .l2distance import L2Distance
@@ -10,6 +11,7 @@ from .opbase import OpBase
 from .plus import Plus
 from .reshape import Reshape
 from .scalarmultiply import ScalarMultiply
+from .sin import Sin
 from .sumreduce import SumReduce
 from .transpose import Transpose
 
@@ -18,6 +20,7 @@ __all__ = [
     "CELoss",
     "Clip",
     "Const",
+    "Cos",
     "Exp",
     "Loss",
     "L2Distance",
@@ -27,6 +30,7 @@ __all__ = [
     "Plus",
     "Reshape",
     "ScalarMultiply",
+    "Sin",
     "SumReduce",
     "Transpose",
 ]
