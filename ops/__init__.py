@@ -1,6 +1,7 @@
 from .crossentropyloss import CELoss
 from .clip import Clip
 from .const import Const
+from .exp import Exp
 from .loss import Loss
 from .l2distance import L2Distance
 from .matmul import Matmul
@@ -17,6 +18,7 @@ __all__ = [
     "CELoss",
     "Clip",
     "Const",
+    "Exp",
     "Loss",
     "L2Distance",
     "Matmul",

@@ -7,6 +7,7 @@ from ops import (
     CELoss,
     Clip,
     Const,
+    Exp,
     Loss,
     L2Distance,
     Matmul,
@@ -137,6 +138,9 @@ class TestOps(unittest.TestCase):
     def test_scalarmult(self):
         self.verify_1d_op(ScalarMultiply)
 
+    def test_exp(self):
+        self.verify_1d_op(Exp)
+
     def test_Reshape(self):
         self.verify_1d_op(Reshape, x_shape=(15, 4), shape=(5, 12))
 
@@ -151,6 +155,7 @@ class TestOps(unittest.TestCase):
 
     def test_CEloss(self):
         self.verify_2d_op(CELoss, x_shape=(15, 4), y_shape=(15, 4))
+
 
 
 
