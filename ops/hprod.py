@@ -1,11 +1,11 @@
 from .opbase import OpBase, verify_shape
 
 
-class HProd(OpBase):
-    """ x -> """
+class ElemWiseProd(OpBase):
+    """ Hadamard/Element Wise Matrix Product """
     def __init__(self, x:OpBase, y:OpBase):
         super().__init__(x=x, y=y)
-        verify_shape(x, y, "HProd: ")
+        verify_shape(x, y, ": ")
 
     @property
     def shape(self):
@@ -25,4 +25,4 @@ class HProd(OpBase):
             return self.grad * self.x
 
     def __repr__(self):
-        return f"Hprod {self.input_ops['x'].shape}"
+        return f"ElemWiseProd {self.input_ops['x'].shape}"

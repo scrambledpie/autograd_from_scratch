@@ -77,10 +77,14 @@ class MLP:
         """
         Compute gradients, update weights with gradient descent, return loss
         """
+        # compute loss and gradients
         loss_value = self.loss.forward()[0, 0]
-        for w in self.params:
-            grad_w = w.dloss_doutput()
+        grads =[w.dloss_doutput() for w in self.params]
+
+        # apply weight updates
+        for w, grad_w in zip(self.params, grads):
             w.set_val(w.val - self.learning_rate * grad_w)
+
         return loss_value
 
     def train(self):
